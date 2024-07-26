@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+
+header {
+    background: #007bff;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+header .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.profile-img {
+    border: 5px solid #fff;
+}
+
+#about, #portfolio, #contact {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #007bff;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #007bff;
+}
+
+footer {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header .lead {
+        font-size: 1rem;
+    }
+
+    #portfolio .col-md-4 {
+        margin-bottom: 20px;
+    }
+}
