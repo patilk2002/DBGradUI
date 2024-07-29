@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+</head>
+<body>
+    <h1>JavaScript Tasks</h1>
+    <script>
+        // Task 1: Use map to convert an array of numbers into an array of their cubes
+        function cubeArray(numbers) {
+            return numbers.map(number => Math.pow(number, 3));
+        }
+        console.log("Task 1:", cubeArray([1, 2, 3, 4])); // Output: [1, 8, 27, 64]
+
+        // Task 2: Use reduce to find the sum of all elements in an array
+        function sumArray(numbers) {
+            return numbers.reduce((total, number) => total + number, 0);
+        }
+        console.log("Task 2:", sumArray([1, 2, 3, 4])); // Output: 10
+
+        // Task 3: Use filter to find all prime numbers in an array
+        function isPrime(number) {
+            if (number <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) return false;
+            }
+            return true;
+        }
+        function filterPrimes(numbers) {
+            return numbers.filter(isPrime);
+        }
+        console.log("Task 3:", filterPrimes([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); // Output: [2, 3, 5, 7]
+
+        // Task 4: Calculate the average of squared odd numbers in an array
+        function averageOfSquaredOdds(numbers) {
+            const oddNumbers = numbers.filter(number => number % 2 !== 0);
+            const squaredOdds = oddNumbers.map(number => number * number);
+            const sumOfSquares = squaredOdds.reduce((total, number) => total + number, 0);
+            return sumOfSquares / squaredOdds.length;
+        }
+        console.log("Task 4:", averageOfSquaredOdds([1, 2, 3, 4, 5])); // Output: 11
+
+        // Task 5: Find the longest string in an array of strings
+        function findLongestString(strings) {
+            return strings.reduce((longest, current) => current.length > longest.length ? current : longest, "");
+        }
+        console.log("Task 5:", findLongestString(["apple", "banana", "cherry", "date"])); // Output: "banana"
+
+        // Task 6: Capitalize the first letter of each word in a sentence
+        function capitalizeFirstLetters(sentence) {
+            return sentence.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        }
+        console.log("Task 6:", capitalizeFirstLetters("hello world from javascript")); // Output: "Hello World From Javascript"
+
+        // Task 7: Find all students who passed the exam
+        function passedStudents(students) {
+            return students.filter(student => student.score >= 60);
+        }
+        const students = [
+            { name: 'Alice', score: 85 },
+            { name: 'Bob', score: 45 },
+            { name: 'Charlie', score: 75 },
+            { name: 'David', score: 30 }
+        ];
+        console.log("Task 7:", passedStudents(students)); // Output: [{ name: 'Alice', score: 85 }, { name: 'Charlie', score: 75 }]
+
+        // Task 8: Create a Private Counter for Multiple Instances
+        function createInstanceCounter() {
+            let count = 0;
+            return function() {
+                count++;
+                return count;
+            };
+        }
+        const counter1 = createInstanceCounter();
+        const counter2 = createInstanceCounter();
+        console.log("Task 8:");
+        console.log(counter1()); // Output: 1
+        console.log(counter1()); // Output: 2
+        console.log(counter2()); // Output: 1
+        console.log(counter2()); // Output: 2
+
+        // Task 9: Create a Promise-Based Calculator
+        function calculate(a, b, operation) {
+            return new Promise((resolve, reject) => {
+                switch (operation) {
+                    case 'add':
+                        resolve(a + b);
+                        break;
+                    case 'subtract':
+                        resolve(a - b);
+                        break;
+                    case 'multiply':
+                        resolve(a * b);
+                        break;
+                    case 'divide':
+                        if (b === 0) {
+                            reject('Division by zero error');
+                        } else {
+                            resolve(a / b);
+                        }
+                        break;
+                    default:
+                        reject('Invalid operation');
+                }
+            });
+        }
+        console.log("Task 9:");
+        calculate(10, 5, 'add').then(result => console.log(result)).catch(error => console.error(error)); // Output: 15
+        calculate(10, 0, 'divide').then(result => console.log(result)).catch(error => console.error(error)); // Output: Division by zero error
+
+        // Task 10: Calculate total score using forEach
+        function totalScore(objects) {
+            let total = 0;
+            objects.forEach(obj => total += obj.score);
+            return total;
+        }
+        const objects = [
+            { score: 10 },
+            { score: 20 },
+            { score: 30 },
+            { score: 40 }
+        ];
+        console.log("Task 10:", totalScore(objects)); // Output: 100
+    </script>
+</body>
+</html>
