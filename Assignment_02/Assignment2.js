@@ -1,3 +1,6 @@
+// Task 1: Use map to convert an array of numbers into an array of their cubes
+
+
 function cubeArray(numbers) {
     return numbers.map(number => Math.pow(number, 3));
 }
@@ -6,6 +9,7 @@ function cubeArray(numbers) {
 console.log(cubeArray([1, 2, 3, 4])); // Output: [1, 8, 27, 64]
 
 
+// Task 2: Use reduce to find the sum of all elements in an array
 
 function sumArray(numbers) {
     return numbers.reduce((total, number) => total + number, 0);
@@ -16,6 +20,7 @@ console.log(sumArray([1, 2, 3, 4])); // Output: 10
 
 
 
+// Task 3: Use filter to find all prime numbers in an array
 
 function sumArray(numbers) {
     return numbers.reduce((total, number) => total + number, 0);
@@ -25,6 +30,7 @@ function sumArray(numbers) {
 console.log(sumArray([1, 2, 3, 4])); // Output: 10
 
 
+// Task 4: Use map, reduce, and filter to calculate the average of squared odd numbers in an array
 
 function averageOfSquaredOdds(numbers) {
     const oddNumbers = numbers.filter(number => number % 2 !== 0);
@@ -37,6 +43,8 @@ function averageOfSquaredOdds(numbers) {
 console.log(averageOfSquaredOdds([1, 2, 3, 4, 5])); // Output: 11
 
 
+
+// Task 5: Use map, reduce, and filter to find the longest string in an array of strings
 function findLongestString(strings) {
     return strings.reduce((longest, current) => current.length > longest.length ? current : longest, "");
 }
@@ -45,6 +53,7 @@ function findLongestString(strings) {
 console.log(findLongestString(["apple", "banana", "cherry", "date"])); // Output: "banana"
 
 
+// Task 6: Use map to capitalize the first letter of each word in a sentence
 
 function capitalizeFirstLetters(sentence) {
     return sentence.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
@@ -53,6 +62,9 @@ function capitalizeFirstLetters(sentence) {
 // Example usage:
 console.log(capitalizeFirstLetters("hello world from javascript")); // Output: "Hello World From Javascript"
 
+
+
+// Task 7: Use filter to find all students who passed the exam
 
 function passedStudents(students) {
     return students.filter(student => student.score >= 60);
@@ -68,10 +80,8 @@ const students = [
 console.log(passedStudents(students)); // Output: [{ name: 'Alice', score: 85 }, { name: 'Charlie', score: 75 }]
 
 
+
 // Task 8: Create a Private Counter for Multiple Instances
-
-
-
 function createInstanceCounter() {
     let count = 0;
     return function() {
