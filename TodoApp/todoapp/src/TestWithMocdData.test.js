@@ -5,22 +5,22 @@ import userEvent from '@testing-library/user-event';
 const mockData= [
     {
         "id": 1,
-        "first_name": "Parag",
-        "last_name" : "Joshi",
-        "email" : "par@gmail.com"
+        "first_name": "Kiran",
+        "last_name" : "Patil",
+        "email" : "kiran@gmail.com"
     },
     {
         "id": 2,
-        "first_name": "Prachi",
-        "last_name" : "Joshi",
-        "email" : "pra@gmail.com"
+        "first_name": "Dipak",
+        "last_name" : "Patil",
+        "email" : "dip@gmail.com"
     }
 ]
 
 
 test('List Renders Successfully', () => {
     render(<TestWithMockData data={mockData}/>)
-    expect(screen.getByText(/Parag/i)).toBeInTheDocument();
+    expect(screen.getByText(/Kiran/i)).toBeInTheDocument();
 });
 
 test ('Email link is clicked', async()=>{
